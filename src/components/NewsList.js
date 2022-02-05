@@ -1,18 +1,25 @@
+import { ListGroup } from "react-bootstrap"
 import useDataFetcher from "../hooks/dataFetcher"
+import NewEntry from "./NewEntry"
+
 
 const NewsList = () => {
   const type = "top" //todo pass it as parameter
   const { isLoading, stories } = useDataFetcher(type ? type : "top")
-  console.log(stories)
   return (
     <div>
       <h2>News List</h2>
-      <ul>
+      <ListGroup as="ul">
         {!isLoading &&
           stories.map(
-            ({ data: story }) => story && <li key={story.id}>{story.id}</li>
+            ({ data: story }) =>
+              story && (
+                <ListGroup.Item as="li" key={story.id}>
+                  <NewEntry story={story} />
+                </ListGroup.Item>
+              )
           )}
-      </ul>
+      </ListGroup>
     </div>
   )
 }
