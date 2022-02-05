@@ -1,4 +1,5 @@
 import { Container, Nav, Navbar } from "react-bootstrap"
+import styles from "../styles/Header.module.scss"
 
 const Header = ({ setType }) => {
   return (
@@ -13,7 +14,14 @@ const Header = ({ setType }) => {
             <Nav.Link onClick={() => setType("best")}>Best</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Navbar.Collapse className="justify-content-end">Login</Navbar.Collapse>
+        <Navbar.Collapse className="justify-content-end">
+          <a
+            href="https://news.ycombinator.com/login?goto=news"
+            className={styles.login}
+          >
+            Login
+          </a>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   )
