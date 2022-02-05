@@ -1,14 +1,14 @@
+import { useState } from "react"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import NewsList from "./components/NewsList"
-import styles from "./styles/App.module.scss"
 
 const App = () => {
-
+  const [type, setType] = useState('top')
   return (
-    <div className={styles.App}>
-      <Header/>
-      <NewsList/>
+    <div>
+      <Header setType={setType} />
+      <NewsList type={type} />
       <Footer/>
     </div>
   )

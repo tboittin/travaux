@@ -1,14 +1,14 @@
+import {useEffect} from 'react'
+
 import { ListGroup } from "react-bootstrap"
 import useDataFetcher from "../hooks/dataFetcher"
 import NewEntry from "./NewEntry"
 
-
-const NewsList = () => {
-  const type = "top" //todo pass it as parameter
+const NewsList = ({ type }) => {
   const { isLoading, stories } = useDataFetcher(type ? type : "top")
+
   return (
     <div>
-      <h2>News List</h2>
       <ListGroup as="ul">
         {!isLoading &&
           stories.map(
