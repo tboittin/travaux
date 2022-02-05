@@ -1,14 +1,15 @@
-import {useEffect} from 'react'
-
 import { ListGroup } from "react-bootstrap"
+
 import useDataFetcher from "../hooks/dataFetcher"
 import NewEntry from "./NewEntry"
+
+import styles from "../styles/NewsList.module.scss"
 
 const NewsList = ({ type }) => {
   const { isLoading, stories } = useDataFetcher(type ? type : "top")
 
   return (
-    <div>
+    <div className={styles.NewsList}>
       <ListGroup as="ul">
         {!isLoading &&
           stories.map(
