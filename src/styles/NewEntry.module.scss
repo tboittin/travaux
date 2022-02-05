@@ -10,4 +10,25 @@
       text-decoration: underline;
     }
   }
+  .bigSkeleton {
+    height: 1.2rem;
+    width: 30%;
+    margin-bottom: 3px;
+    animation: skeleton-loading 1s linear infinite alternate;
+  }
+  .littleSkeleton {
+    height: 1rem;
+    width: 15%;
+    animation: skeleton-loading 1s linear infinite alternate;
+  }
+  
+  @keyframes skeleton-loading {
+    0% {
+      background-color: hsl(200, 20%, 70%);
+    }
+  
+    100% {
+      background-color: hsl(200, 20%, 95%);
+    }
+  }
 }
