@@ -1,5 +1,4 @@
 import { useState } from "react"
-import Footer from "./components/Footer"
 import Header from "./components/Header"
 import NewsList from "./components/NewsList"
 
@@ -9,7 +8,6 @@ const App = () => {
     <div>
       <Header setType={setType} />
       <NewsList type={type} />
-      <Footer/>
     </div>
   )
 }
