@@ -1,11 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg"
+import styles from "./styles/App.module.scss"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <header className={styles.AppHeader}>
+        <img src={logo} className={styles.AppLogo} alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -19,7 +19,7 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
